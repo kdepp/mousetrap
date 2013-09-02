@@ -329,9 +329,9 @@ var taskCenter = {
 
 		_.each(this.cfg.rdb[levelId], function (item, key) {
 			if (key == '_extra') return;
-			var field = [key, item.type, item.extra].join(' ');
+			var field = [key, item.type, item._extra].join(' ');
 			fieldSql.push(field);
-			if (item.extra && item.extra.match(/primary/i))	hasPrimaryKey = true;
+			if (item._extra && item._extra.match(/primary/i))	hasPrimaryKey = true;
 		});
 
 		if (!hasPrimaryKey) {

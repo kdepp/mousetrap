@@ -6,7 +6,7 @@ var config = {
 	projectName: 'xiami'
 	, rdb: {
 		'genre-detail-home': {
-			genreId: {type: 'BIGINT', extra: 'PRIMARY KEY'}
+			genreId: {type: 'BIGINT', _extra: 'PRIMARY KEY'}
 			, genreName: {type: 'VARCHAR(255)'}
 			, link: {type: 'VARCHAR(255)'}
 		}
