@@ -3,6 +3,7 @@
 ///var iconv = require('../node_modules/iconv');
 var cheerio = require("./node_modules/cheerio"),
 	request = require('./node_modules/request'),
+	iconv = require("iconv"),
 	fs = require("fs"),
 	url = require('url'),
 	http = require('http'),
@@ -34,10 +35,22 @@ var loadUrl = function (url, callback) {
 var loadUrlNeedEncoding = function (url, from, to, callback) {
     request({uri: url, encoding: 'binary'},
         function(error, response, body) {
-            body = new Buffer(body, 'binary');
-            conv = new iconv.Iconv(from, to);
-            body = conv.convert(body).toString();
+            var conv = new iconv.Iconv(from, to);
 
+            body = new Buffer(body, 'binary');
+
+			try {
+				body = conv.convert(body).toString();
+			}
+			catch (e) {
+				body = body.toString()
+			}
+
+			var $ = cheerio.load(body);
+
+			callback.call(null, $, function () {});
+
+			/*
             jsdom.env({
                 html: body,
                 // src: [fs.readFileSync('./jquery.min.js').toString()],
@@ -49,6 +62,7 @@ var loadUrlNeedEncoding = function (url, from, to, callback) {
                     });
                 }
             });
+			*/
         }
     );
 };

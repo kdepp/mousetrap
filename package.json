@@ -1,31 +1,32 @@
 {
-    "name": "mousetrap",
-    "description": "a javascript web crawler",
-    "author": "Lu Taining <kdepp@qq.com>",
-    "version": "0.1.1",
-	"main": "./lib/mousetrap.js",
-    "repository" : {
-        "type" : "git",
-        "url" : "https://github.com/kdepp/mousetrap"
-    },
-    "bugs" : {
-        "url" : "https://github.com/kdepp/mousetrap/issues"
-    },
-	"dependencies": {
-		"lodash": "*",
-		"mkdirp": "*",
-		"async": "*",
-		"cheerio": "*",
-		"mysql": "*",
-		"js-beautify": "*",
-		"request": "*"
-	},
-	"scripts": {
-		"douban": "node ./app/douban.js"
-		, "xiami": "node ./app/xiami.js"
-		, "weibo": "node ./app/weibo.js"
-		, "xiachufang": "node ./app/xiachufang.js"
-		, "douguo": "node ./app/douguo.js"
-		, "mile": "node ./app/mile.js"
-	}
+  "name": "mousetrap",
+  "description": "a javascript web crawler",
+  "author": "Lu Taining <kdepp@qq.com>",
+  "version": "0.1.1",
+  "main": "./lib/mousetrap.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kdepp/mousetrap"
+  },
+  "bugs": {
+    "url": "https://github.com/kdepp/mousetrap/issues"
+  },
+  "dependencies": {
+    "lodash": "*",
+    "mkdirp": "*",
+    "async": "*",
+    "cheerio": "*",
+    "mysql": "*",
+    "js-beautify": "*",
+    "request": "*",
+    "iconv": "~2.0.7"
+  },
+  "scripts": {
+    "douban": "node ./app/douban.js",
+    "xiami": "node ./app/xiami.js",
+    "weibo": "node ./app/weibo.js",
+    "xiachufang": "node ./app/xiachufang.js",
+    "douguo": "node ./app/douguo.js",
+    "mile": "node ./app/mile.js"
+  }
 }
