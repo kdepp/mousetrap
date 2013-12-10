@@ -31,7 +31,7 @@ var config = {
 					, selector: '.musician_tags_con a'
 					, fn: function ($dom, crawlingUrl) {
 						var link = $dom.attr('href'),
-							match = link.match(/^http:\/\/i\.xiami\.com\/genre\/id\/(\d+)/),
+							match = link.match(/^http:\/\/i\.xiami\.com\/.*\/id\/(\d+)/),
 							id = match[1];
 
 						return {
