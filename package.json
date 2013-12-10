@@ -21,6 +21,11 @@
 		"request": "*"
 	},
 	"scripts": {
-		"start": "node ./douban.js"
+		"douban": "node ./app/douban.js"
+		, "xiami": "node ./app/xiami.js"
+		, "weibo": "node ./app/weibo.js"
+		, "xiachufang": "node ./app/xiachufang.js"
+		, "douguo": "node ./app/douguo.js"
+		, "mile": "node ./app/mile.js"
 	}
 }
