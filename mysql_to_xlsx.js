@@ -5,7 +5,8 @@ var xlsx = require("node-xlsx"),
 	 _ = require("lodash");
 
 var mysql_to_xlsx = function (config) {
-	var connection = mysql.createConnection(config);
+	var connection = mysql.createConnection(config),
+		reg = new RegExp("[\\u0000-\\u0010]*", "g");
 
 	connection.connect();
 
@@ -27,7 +28,15 @@ var mysql_to_xlsx = function (config) {
 			var arr = [];
 
 			_.each(fields, function (field) {
-				arr.push(item[field.name] || 0);
+				var value = item[field.name];
+
+				if (value === null) {
+					value = 0;
+				} else if (_.isString(value)) {
+					value = value.replace(reg, "");
+				}
+
+				arr.push(value);
 			});	
 
 			return arr;
