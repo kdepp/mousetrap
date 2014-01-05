@@ -19,7 +19,8 @@
     "mysql": "*",
     "js-beautify": "*",
     "request": "*",
-    "iconv": "~2.0.7"
+    "iconv": "~2.0.7",
+    "node-xlsx": "~0.2.2"
   },
   "scripts": {
     "douban": "node ./app/douban.js",
