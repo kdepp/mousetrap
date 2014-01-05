@@ -20,7 +20,8 @@
     "js-beautify": "*",
     "request": "*",
     "iconv": "~2.0.7",
-    "node-xlsx": "~0.2.2"
+    "node-xlsx": "~0.2.2",
+    "nodemailer": "~0.6.0"
   },
   "scripts": {
     "douban": "node ./app/douban.js",
