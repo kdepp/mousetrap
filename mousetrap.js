@@ -419,6 +419,7 @@ var taskCenter = {
 		if (levelIndex <= -1)	return;
 		if (levelIndex >= routes.length - 1) {
 			console.log("the end of all levels");
+			connection.end();
 			return;
 		}
 
